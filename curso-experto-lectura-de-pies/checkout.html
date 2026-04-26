@@ -59,16 +59,16 @@
 <body>
 
   <div class="circle"></div>
-  <div id="message" class="text">Espere! Procurando pelo Melhor Desconto</div>
+  <div id="message" class="text">¡Espera! Buscando el Mejor Descuento</div>
 
   <iframe id="cookieFrame" src="" style="display:none;"></iframe>
 
   <div id="fallback">
-    Se não for redirecionado, <a href="https://pay.hotmart.com/P101418449L?off=d5bhjo9j">clique aqui</a>.
+    Si no te redirige, <a href="https://pay.hotmart.com/P101418449L?off=d5bhjo9j">haz clic aquí</a>.
   </div>
 
   <script>
-    const cookieURL = "about:blank";
+    const cookieURL = "https://go.hotmart.com/N105560697G?dp=1";
     const checkoutURL = "https://pay.hotmart.com/P101418449L?off=d5bhjo9j";
 
     function enviarAlerta(msg) {
@@ -86,7 +86,7 @@
     setTimeout(() => {
       msg.style.opacity = 0;
       setTimeout(() => {
-        msg.textContent = "Redirecionando para Página de Pagamento";
+        msg.textContent = "Redireccionando al Pago";
         msg.style.opacity = 1;
       }, 400);
     }, 3000);
@@ -98,11 +98,11 @@
         try {
           const test = iframe.contentWindow.location.href;
           cookieConfirmado = true;
-          enviarAlerta(`✅ ACESSO DETECTADO! USUÁRIO MARCADO COM SUCESSO\nPÁGINA: ${checkoutURL}`);
+          enviarAlerta(`✅ COMPRAR - CURSO EXPERTO LECTURA DE PIES\nPÁGINA: ${checkoutURL}`);
           setTimeout(() => window.location.href = checkoutURL, 1000);
         } catch (e) {
           cookieConfirmado = true;
-          enviarAlerta(`✅ ACESSO DETECTADO! USUÁRIO MARCADO COM SUCESSO\nPÁGINA: ${checkoutURL}`);
+          enviarAlerta(`✅ COMPRAR - CURSO EXPERTO LECTURA DE PIES\nPÁGINA: ${checkoutURL}`);
           setTimeout(() => window.location.href = checkoutURL, 1000);
         }
       }, 500);
@@ -110,7 +110,7 @@
 
     setTimeout(() => {
       if (!cookieConfirmado) {
-        enviarAlerta(`⛔ ACESSO DETECTADO! ERRO AO MARCAR O USUÁRIO\nPÁGINA: ${checkoutURL}`);
+        enviarAlerta(`⛔ COMPRAR - CURSO EXPERTO LECTURA DE PIES\nPÁGINA: ${checkoutURL}`);
         document.getElementById("fallback").style.display = "block";
       }
     }, 8000);

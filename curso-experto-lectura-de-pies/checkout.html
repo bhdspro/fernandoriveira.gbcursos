@@ -8,6 +8,16 @@
 				.catch(console.error);
 		})();
 	</script>
+	
+	<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17688764045"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'AW-17688764045');
+		</script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,6 +109,14 @@
           const test = iframe.contentWindow.location.href;
           cookieConfirmado = true;
           enviarAlerta(`✅ COMPRAR - CURSO EXPERTO LECTURA DE PIES\nPÁGINA: ${checkoutURL}`);
+		  
+		  gtag('event', 'conversion', {
+			  'send_to': 'AW-17688764045/t6IPCP7ekaMcEI291PJB',
+			  'value': 1.0,
+			  'transaction_id': ''
+			  // 'new_customer': true /* calculate dynamically, populate with true/false */,
+		  });
+		  
           setTimeout(() => window.location.href = checkoutURL, 1000);
         } catch (e) {
           cookieConfirmado = true;
